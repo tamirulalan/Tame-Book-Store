@@ -2,10 +2,13 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const product = require("./models/product.js");
+const path = require('path');
 const app = express();
 
-app.use(express.static('./public'));
-app.use(express.json());
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'))
+// app.use(express.static(__dirname + 'public'))
+
 
 
 const methodOverride = require('method-override');
@@ -76,21 +79,22 @@ app.delete('/product/:id', (req, res)=>{
     })
     
   // Edit - Get the form with the record to update
-  
-  app.get('/product/:id/edit', (req, res)=>{
-    product.findById(req.params.id, (err, foundproduct)=>{ //find the fruit
-      if(!err){
-        res.render(
-          'Edit',
-        {
-          product: foundproduct //pass in the found fruit so we can prefill the form
-        }
-      );
-    } else {
-      res.send({ msg: err.message })
-    }
-    })
+
+app.get('/product/:id/edit', (req, res)=>{
+  product.findById(req.params.id, (err, foundproduct)=>{ //find the fruit
+    if(!err){
+      res.render(
+        'Edit',
+      {
+        product: foundproduct //pass in the found fruit so we can prefill the form
+      }
+    );
+  } else {
+    res.send({ msg: err.message })
+  }
   })
+})
+
   
   
   // Show
@@ -106,7 +110,7 @@ app.delete('/product/:id', (req, res)=>{
   app.put("/product/buy/:indexOfproductArray", function (req, res) {
     product.findById(req.params.indexOfproductArray, (err, foundproduct) => {
      let item =foundproduct
-     item.Qty =item.Qty-1
+     item.Qtity =item.Qtity-1
      product.findByIdAndUpdate(req.params.indexOfproductArray, item, (err, foundproduct) => {
       res.redirect(`/product/${req.params.indexOfproductArray}`)
      })

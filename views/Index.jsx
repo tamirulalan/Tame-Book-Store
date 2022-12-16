@@ -1,5 +1,5 @@
 const React = require("react");
-// const DefaultLayout =require('./Default')
+ const DefaultLayout =require('./Default');
 
 function cap(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -11,38 +11,44 @@ class Index extends React.Component {
     const { product } = this.props;
     return (
       <div style={styles}>
-      {/* <DefaultLayout title={"product Index Page"}></DefaultLayout> */}
+      <DefaultLayout title={"Buy Today and change your Tomorrow!!!"}></DefaultLayout>
+      <link rel="stylesheet" type="text/css" href="../css/index.css"/> 
         
-        <img src="https://images-na.ssl-images-amazon.com/images/G/01/books/textbooks/marketing/CXImprove_test/CXImprov_textbooks_T2.png"></img>
+          <div className="image-fader">
+            <img src="https://images-na.ssl-images-amazon.com/images/G/01/books/textbooks/marketing/CXImprove_test/CXImprov_textbooks_T2.png"></img>
+            <img src="https://th.bing.com/th/id/R.7d6d614afbcd49f1ccbc454f2828269f?rik=B3AnwF9GRiQRLQ&riu=http%3a%2f%2fwww.porchlightbooks.com%2fglobalassets%2fpage-headers%2fbuybooksheader-edited.jpg%3fpreset%3dfull-width&ehk=t9dlraeCFUYxl4LZUrMI9VCl12OTDW3V1uKkYOf45Ow%3d&risl=&pid=ImgRaw&r=0 "   />
+            <img src="https://static1.squarespace.com/static/537e88a6e4b078fc56661bfc/554940a1e4b02653f832acd5/554940aae4b083e53b49e252/1430864044096/Wristlet+-+landing.jpg" />
+        </div>
 
-        <nav style={navstyle}>
-          <a style ={{margin:"10px 60px"}} href="/"><h1> Back to Home</h1></a>
-          <a style ={{margin:"10px 525px"}} href="/product/new"><h1> Add new books</h1></a>
+        <nav className="navBar">
+          <ul className="navList">
+            <li><a  href="/"><h1 className="bh"> Back to Home</h1></a></li>
+            <li><a  href="/product/new"><h1 className="an"> Add new books</h1></a></li>
+          </ul>
         </nav>
+
         <h1>Top purchused book List</h1>
         {console.log(product)}
-        <ul style={ordirection}>
+        <div className="bookBar">
+          <ul className="bookList">
           {product.map((product, idx) => (
             <li key={idx}>
-              <img style={{margin: '30px', width:'150px', heigth: '200px' }} src={product.img} />
+              {/* <img className="bookCover"  src={product.img} /> */}
+              <a href={`/product/${product.id}`}><img className="bookCover" src={product.img} /></a>
               <br/>
               <a href={`/product/${product.id}`}>{cap(product.name)}</a>
               <br/>
-               By {product.Author} 
-               <br></br>
-               price {product.price}
-                 Qty {product.Qty}
+               <h4>By {product.Author} </h4>
+               <h4>price {product.price}</h4>
+                <h4>Qtity {product.Qtity}</h4> 
               <br/>
-              {/* <a href={`/product/${product._id}/edit`}>Edit</a>
-              <form action={`/product/${product._id}?_method=DELETE`} method="POST">
-                <input style ={{margin:"10px 40px ", backgroundColor:  '#F51720'}} type="submit" value="DELETE"/>
-              </form> */}
-              
             </li>
             
           ))}
           
         </ul>
+        </div>
+        
       </div>
     );
   }

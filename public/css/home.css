@@ -1,0 +1,55 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Montserrat&display=swap'); */
+
+/* .Graph {
+  background-color: blue;
+ 
+  border: 1px solid grey;
+} */
+
+.navBar {
+  background-color: rgb(2, 20, 56);
+  display: flex;
+  top: 0;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 18px;
+  justify-content: space-between;
+  
+  }
+  
+  .navList  {
+   
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+   
+  }
+  
+  .navList li {
+  color:rgb(211, 171, 174);
+  display: inline;
+  padding: 14px 16px;
+  border-right: 1px solid rgb(13, 3, 58);
+  margin-top: 22px;
+  }
+  
+  .navList li a {
+  text-decoration: none;
+  color:rgb(221, 198, 200)
+  
+  }
+  .navList li a:hover {
+    color: rgb(101, 6, 217);
+  }
+  
+  h1{
+    text-align: center;
+  }
+  img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+

@@ -7,7 +7,12 @@ const productSchema = new mongoose.Schema({
     Date:  { type: String, required: true },
     About:{type: String, required: true},
     Qtity:{type: Number, required: true},
-     img:
+    firstName:{type: String},
+    lastName:{type: String},
+    Phone:{type: Number},
+    yourEmail:{type: String},
+    Message:{type: String},
+    img:
     {
         type:String,
         required:true

@@ -2,10 +2,11 @@ const express = require('express')
 const router = express.Router()
 const product = require('../models/product.js')
 
+//Getting Home page
 router.get("/", (req, res) => {
     res.render('home')
   })
-// Index
+// Index which is used to display my lists
 router.get("/product", (req, res) => {
     product.find({}, (error, allproduct) => {
          res.status(200).render("Index", {
@@ -14,7 +15,7 @@ router.get("/product", (req, res) => {
     })
   })
 
-
+//New route to show new to be added in the broweser
 
 router.get('/product/new', (req,res)=>{
     res.render('new')
@@ -23,7 +24,7 @@ router.get('/product/new', (req,res)=>{
 // Delete - Delete this one record
 router.delete('/product/:id', (req, res)=>{
     product.findByIdAndRemove(req.params.id, (err, data)=>{
-        res.redirect('/product');//redirect back to fruits index
+        res.redirect('/product');//redirect back to books index
     });
   });
   
@@ -37,8 +38,7 @@ router.delete('/product/:id', (req, res)=>{
     });
   });
   
-  
-  //Create
+  //Create -initiates a post request through a form submission with action = http://localhost:3000/products/and allows the application the ability to Createa product
   router.post("/product", (req, res) => {
       product.create(req.body, (error, createdproduct) => {
           if(!error) {
@@ -49,15 +49,15 @@ router.delete('/product/:id', (req, res)=>{
       })
     })
     
-  // Edit - Get the form with the record to update
+  // Edit - browser shows the user a form to edit a product
 
   router.get('/product/:id/edit', (req, res)=>{
-  product.findById(req.params.id, (err, foundproduct)=>{ //find the fruit
+  product.findById(req.params.id, (err, foundproduct)=>{ //find the product
     if(!err){
       res.render(
         'Edit',
       {
-        product: foundproduct //pass in the found fruit so we can prefill the form
+        product: foundproduct //pass in the found product so we can prefill the form
       }
     );
   } else {
@@ -68,7 +68,7 @@ router.delete('/product/:id', (req, res)=>{
 
   
   
-  // Show
+  // Show -shows the user an Individual product in the browser
   router.get("/product/:indexOfproductArray", function (req, res) {
     product.findById(req.params.indexOfproductArray, (err, foundproduct) => {
       res.render("Show", {
@@ -88,5 +88,6 @@ router.delete('/product/:id', (req, res)=>{
      
     });
   });
+
 
 module.exports = router

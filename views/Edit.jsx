@@ -22,7 +22,7 @@ class Edit extends React.Component{
                     <input type="submit" value="Update product"/>
                 </form>
             </div>
-            <a href='/product'><button style={btnH}>Home</button ></a> 
+            <a href='/product'><button style={btnH}>Product List</button ></a> 
             </DefaultLayout>
         )
     }

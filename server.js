@@ -5,6 +5,7 @@ const product = require("./models/product.js");
 const path = require('path');
 const app = express();
 const Router = require('./routes/router')
+
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'))
 // app.use(express.static(__dirname + 'public'))
@@ -12,6 +13,7 @@ app.use(express.static('public'))
 
 
 const methodOverride = require('method-override');
+
 //use methodOverride.  We'll be adding a query parameter to our delete form named _method
 app.use(methodOverride('_method'));
 
@@ -32,6 +34,7 @@ mongoose.connection.once("open", () => {
 });
 
 app.use(Router)
+
 app.listen(3000, ()=>{
     console.log('Start listning to port 3000')
 })

@@ -11,13 +11,13 @@
                     <a href="/">Home Page</a>
                 </nav><br />
                 <form action="/product" method="POST">
-                    Name  : <input type="text" name="name" /> <br></br> 
-                    Author: <input type="text" name="Author" /><br></br> 
-                    Price : <input type="number" name="price" /><br></br> 
-                    Qtity   : <input type="number" name="Qtity" /><br></br> 
-                    Image : <input type="url"  name="img"  /><br></br> 
-                    Date  : <input type="text" name="Date" /><br></br> 
-                    About : <textarea rows="7" cols="50" class="textRegion" name="About"></textarea> 
+                    <input className="input" placeholder="Name"  type='text' name='Name'/> <br></br> 
+                    <input className="input" placeholder="Author"  type='text' name='Author'/><br></br> 
+                    <input className="input" placeholder="Price"  type='text' name='price'/><br></br> 
+                    <input className="input" placeholder="Qtity"  type='text' name='Qtity'/><br></br> 
+                    <input className="input" placeholder="Image"  type='text' name='Image'/><br></br> 
+                    <input className="input" placeholder="Date"  type='text' name='Date'/><br></br> 
+                    <textarea rows="7" cols="50" className="textarea" placeholder="About"  type='text' name='About'/><br></br> 
                     <br></br> 
                             <input type="submit" value="Create product"></input>
                 </form>

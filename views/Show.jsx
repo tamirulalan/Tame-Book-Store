@@ -24,17 +24,16 @@ class Show extends React.Component {
         return <h3>Out of Stock</h3>
       }
     }
-    console.log(product)
     return (
       <div>
-      <nav className="header"><a href=""></a>This is on Frequently bought Book</nav>
+      <nav className="header"><a href=""></a>This is one of Frequently bought Book</nav>
       <div className="mainDiv">
       <link rel="stylesheet" type="text/css" href="../css/show.css"/>
       
       <div>
         <img src={product.img} />
         <br/>
-        <a href='/product'><button style={btnH}>Home</button ></a> 
+        <a href='/product'><button style={btnH}>product List</button ></a> 
         <a href={`/product/${product._id}/edit`}><button style={btnE}>Edit</button></a>
         <form action={`/product/${product._id}?_method=DELETE`} method="POST">
                 <input style ={btnD} type="submit" value="DELETE"/>
@@ -42,16 +41,17 @@ class Show extends React.Component {
       </div>
         <div className="About">
            <h2 >{cap(product.name)} :{cap(product.Author)}, {cap(product.Date)} </h2> 
+           <h3>About</h3>
             <h5 >{cap(product.About)}</h5>
             <img  src="https://th.bing.com/th/id/OIP.-0nzyBDSHddDQ3riX6kuAAAAAA?pid=ImgDet&rs=1"></img>
            
            
         </div>
         <div className="sideBar">
+        <nav className="checkout"> <a href=""></a>Your book is waiting for checkout</nav>
         <h2 className="price" >Paperback  ${product.price}</h2>
-        <a  href="{}"><h3>delivery status</h3></a>
-        <h5>Delivered for free on {new Date().toDateString()}  for all items costs greater than $25 shipped by Tame Store</h5>
-        <h4>select delivery adress</h4>
+        <h5>Delivered for free two days after {new Date().toDateString()}  for all items costs greater than $25 shipped by Tame Store</h5>
+        <nav className="delivery"> <a href=""></a>If you need soon let us know!!</nav>
         
         {renderForm ()}
 

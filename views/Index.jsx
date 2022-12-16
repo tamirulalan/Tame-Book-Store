@@ -9,20 +9,19 @@ function cap(string) {
 class Index extends React.Component {
   render() {
     const { product } = this.props;
-  
-    // const renderValue =()=>{
-    //   if (product.Qtity > 0){
-    //    return <div>
-    //         <h4>price {product.price}</h4>
-    //         <h4>Qtity {product.Qtity}</h4>
-    //         </div> 
-    //     }else{
-    //    return <div>
-    //     <h4>price 0</h4>
-    //     <h4 className="stock">Out of Stock</h4>
-    //     </div>
-    //   }
-    // }
+  console.log(product)
+    const renderValue =(Product)=>{
+      if (Product.Qtity > 0){
+       return <div>
+            <h4>price {Product.price}</h4>
+            <h4>Qtity {Product.Qtity}</h4>
+            </div> 
+        }else{
+       return <div>
+        <h4 className="stock">Out of Stock</h4>
+        </div>
+      }
+    }
 
     return (
       <div style={styles}>
@@ -43,20 +42,16 @@ class Index extends React.Component {
         </nav>
 
         <h1>Top purchused book List</h1>
-        {console.log(product)}
         <div className="bookBar">
           <ul className="bookList">
           {product.map((product, idx) => (
             <li key={idx}>
-              {/* <img className="bookCover"  src={product.img} /> */}
               <a href={`/product/${product.id}`}><img className="bookCover" src={product.img} /></a>
               <br/>
               <a href={`/product/${product.id}`}>{cap(product.name)}</a>
               <br/>
                <h4>By {product.Author} </h4>
-               <h4>price {product.price}</h4>
-               <h4>Qtity {product.Qtity}</h4>
-               {/* {renderValue()} */}
+               {renderValue(product)}
               <br/>
             </li>
             

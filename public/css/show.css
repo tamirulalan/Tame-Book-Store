@@ -45,4 +45,24 @@ a{
     text-align: center;
     color: #aaaaaa;
     font-size: 40px;
+    height: 100px;
+    border-radius: 25px;
+    background: url(https://i.pinimg.com/originals/86/cc/bb/86ccbb5469e5192dbdc7c031ca45d0c2.gif);
+    background-repeat: repeat;
+}
+.checkout{
+    margin-top: 10px;
+    background-color: rgb(22, 190, 50);
+    border-radius: 25px;
+    background: url(https://i.stack.imgur.com/wbWxZ.gif);
+    background-repeat: repeat;
+    height: 30px;
+    text-align: center;
+    font-size: 22px;
+}
+.delivery{
+    background-color: rgb(22, 190, 50);
+    border-radius: 25px;
+    height: 30px;
+    font-size: 22px;
 }

@@ -19,9 +19,7 @@ class Show extends React.Component {
             <form action={`/product/buy/${product.id}?_method=PUT`} method="POST">
             <input className="btn" type="submit" value=" Buy "/>
             </form>
-            
-          </div>
-       
+          </div> 
       }else {
         return <h3>Out of Stock</h3>
       }
@@ -34,7 +32,6 @@ class Show extends React.Component {
       <link rel="stylesheet" type="text/css" href="../css/show.css"/>
       
       <div>
-        {/* <h2>{product.Qty}</h2> */}
         <img src={product.img} />
         <br/>
         <a href='/product'><button style={btnH}>Home</button ></a> 

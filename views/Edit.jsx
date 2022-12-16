@@ -7,7 +7,7 @@ class Edit extends React.Component{
         const {product} = this.props
         console.log(this.props.product)
         return(
-            <DefaultLayout title= <img style={{height: '80px', width: '300px'}} src='https://th.bing.com/th/id/R.6615a50bf04cb796db306bf3dd6eede2?rik=YGjuamJZznm%2f0g&pid=ImgRaw&r=0&sres=1&sresct=1'></img>> 
+            <DefaultLayout title= <img style={{height: '100px', width: '400px'}} src='https://th.bing.com/th/id/R.6615a50bf04cb796db306bf3dd6eede2?rik=YGjuamJZznm%2f0g&pid=ImgRaw&r=0&sres=1&sresct=1'></img>> 
             <link rel="stylesheet" type="text/css" href="../css/edit.css"/>
             <div>
                 <h1 style={heading}>Edit this product</h1>
@@ -29,7 +29,7 @@ class Edit extends React.Component{
 }
 const heading ={
     color: 'Green',
-    margin: '10px 700px'
+    margin: '10px 600px'
 }
 const formFeild ={
         width: '30vw',

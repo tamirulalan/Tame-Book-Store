@@ -9,6 +9,21 @@ function cap(string) {
 class Index extends React.Component {
   render() {
     const { product } = this.props;
+  
+    // const renderValue =()=>{
+    //   if (product.Qtity > 0){
+    //    return <div>
+    //         <h4>price {product.price}</h4>
+    //         <h4>Qtity {product.Qtity}</h4>
+    //         </div> 
+    //     }else{
+    //    return <div>
+    //     <h4>price 0</h4>
+    //     <h4 className="stock">Out of Stock</h4>
+    //     </div>
+    //   }
+    // }
+
     return (
       <div style={styles}>
       <DefaultLayout title={"Buy Today and change your Tomorrow!!!"}></DefaultLayout>
@@ -40,7 +55,8 @@ class Index extends React.Component {
               <br/>
                <h4>By {product.Author} </h4>
                <h4>price {product.price}</h4>
-                <h4>Qtity {product.Qtity}</h4> 
+               <h4>Qtity {product.Qtity}</h4>
+               {/* {renderValue()} */}
               <br/>
             </li>
             

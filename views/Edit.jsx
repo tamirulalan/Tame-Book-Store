@@ -22,7 +22,11 @@ class Edit extends React.Component{
                     <input type="submit" value="Update product"/>
                 </form>
             </div>
-            <a href='/product'><button style={btnH}>Product List</button ></a> 
+            <div style={{marginLeft: '550px'}}>
+                <a href='/product'><button style={btnH}>Product List</button ></a> 
+                <a  href="/"><button style={btnHP}>Home</button ></a>
+            </div>
+            
             </DefaultLayout>
         )
     }
@@ -52,11 +56,24 @@ const formFeild ={
  }
  const btnH ={
     margin:"7px",
+    
     backgroundColor: "Green",
       width: '100px',
       padding: "10px",
       boarder: "1px yellow",
       borderRadius: "5px",
       textDecoration: "none",
+ }
+ const btnHP ={
+    margin:"7px",
+    backgroundColor: "blue",
+      width: '100px',
+      padding: "10px",
+      boarder: "1px yellow",
+      borderRadius: "5px",
+      textDecoration: "none",
+ }
+ const button ={
+    alignself: 'center',
  }
 module.exports = Edit

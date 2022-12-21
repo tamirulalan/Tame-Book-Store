@@ -22,9 +22,13 @@ class Home extends React.Component {
           <li><a  href="https://www.coupons.com/"><h1>Speacial Deals</h1></a></li>
           <li> <a  href="https://www.linkedin.com/in/tamiru-taye/"><h1>Contact Us</h1></a></li>
           </ul>
-          <img className="logo" src="../images/header.png"></img>
+          <ul className="sign">
+            
+           <li> <a href='/user/signup'>Sign In/Up</a></li>
+             <li><a href='/user/signout'>SignOut</a></li>
+          </ul>
         </nav>
-        <h1 >Tame Book Store</h1>
+        <h1 className="wellcome">Well Come to Tame Book Store</h1>
         <img  src="https://jonathanbecher.com/wp-content/uploads/2016/04/Read-more-books.jpg"></img>
         
       </div>

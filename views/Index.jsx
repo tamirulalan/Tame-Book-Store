@@ -9,11 +9,11 @@ function cap(string) {
 class Index extends React.Component {
   render() {
     const { product } = this.props;
-  console.log(product)
+  // console.log(product)
     const renderValue =(Product)=>{
       if (Product.Qtity > 0){
        return <div>
-            <h4>price {Product.price}</h4>
+            <h4>$ {Product.price}</h4>
             <h4>Qtity {Product.Qtity}</h4>
             </div> 
         }else{
@@ -22,10 +22,37 @@ class Index extends React.Component {
         </div>
       }
     }
+    const mycart =()=>{
+      if(typeof cart !== 'undefined'){
+        return cart.length
+      }else{
+        return 0
+      }
+    }
 
     return (
       <div style={styles}>
-      <DefaultLayout title={"Buy Today and change your Tomorrow!!!"}></DefaultLayout>
+               <nav className="navBar">
+          
+          <ul className="nav">
+          <li className="nav-item">
+            <a className="nav-link active" href="/" ><i className="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/product/new"><i className="fa fa-plus-circle" aria-hidden="true"></i> Product</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/add/product"><i className="fa fa-shopping-cart" aria-hidden="true" ></i>  <span>  {mycart()} </span> </a>
+          </li>
+        </ul>
+             {/* <li><a  href="/"><h1 className="bh"> Back to Home</h1></a></li>
+            <li><a  href="/product/new"><h1 className="an"> </h1></a></li>
+          </ul> */}
+        </nav> 
+      <DefaultLayout title={""}></DefaultLayout>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossOrigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"></link>
       <link rel="stylesheet" type="text/css" href="../css/index.css"/> 
         
           <div className="image-fader">
@@ -34,12 +61,7 @@ class Index extends React.Component {
             <img src="https://static1.squarespace.com/static/537e88a6e4b078fc56661bfc/554940a1e4b02653f832acd5/554940aae4b083e53b49e252/1430864044096/Wristlet+-+landing.jpg" />
         </div>
 
-        <nav className="navBar">
-          <ul className="navList">
-            <li><a  href="/"><h1 className="bh"> Back to Home</h1></a></li>
-            <li><a  href="/product/new"><h1 className="an"> Add new books</h1></a></li>
-          </ul>
-        </nav>
+
 
         <h1>Top purchused book List</h1>
         <div className="bookBar">
@@ -53,6 +75,11 @@ class Index extends React.Component {
                <h4>By {product.Author} </h4>
                {renderValue(product)}
               <br/>
+              <form action={`/add/product}?_method=PUT`} method="POST">
+            {/* <input className="btn" type="submit" value=" Buy "/> */}
+                <button type="submit" className="btn btn-success">Add to Cart</button>
+              </form>
+              
             </li>
             
           ))}
